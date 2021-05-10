@@ -17,12 +17,21 @@ function rowChange(dateInput, dayCell, activityInput, localResultCell) {
   }
   localResultCell.innerHTML = hours
   updateResult()
-  updateAccumulated()
   manageLines()
+  updateAccumulated()
 }
 
 function updateAccumulated() {
-  
+  const offset = Number(document.getElementById("offset").value)
+  const tbody = document.getElementById("userInputHours")
+  const rows = Array.from(tbody.querySelectorAll("tr"))
+  let acc = offset
+  for(row of rows) {
+    const result = Number(row.getElementsByClassName("localresult")[0].innerHTML)
+    acc += result
+    row.getElementsByClassName("acc")[0].innerHTML = acc
+    //acc += result
+  }
 }
 
 function sortLines() {
@@ -44,7 +53,8 @@ function getDateFromLine(line) {
 
 function updateResult() {
   const offset = Number(document.getElementById("offset").value)
-  
+  const result = Array.from(document.getElementsByClassName("localresult")).reduce(
+    (acc, cur) => acc + Number(cur.innerHTML), 0) + offset
   const resultCell = document.getElementById("result")
   resultCell.innerHTML = result
 }
