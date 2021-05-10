@@ -30,7 +30,6 @@ function updateAccumulated() {
     const result = Number(row.getElementsByClassName("localresult")[0].innerHTML)
     acc += result
     row.getElementsByClassName("acc")[0].innerHTML = acc
-    //acc += result
   }
 }
 
@@ -124,6 +123,7 @@ function addLineAtEnd() {
   localResultCell.classList.add('localresult')
   
   const accCell = row.insertCell()
+  accCell.innerHTML = "0"
   accCell.classList.add('acc')
 
   

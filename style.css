@@ -1,3 +1,11 @@
 input[type=number] {
-  width: 4em;
+  width: 6em;
+}
+
+input[type=date] {
+  width: 8em;
+}
+
+.content {
+  padding: 4rem;
 }
