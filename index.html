@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Hours left</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -30,9 +30,6 @@
 
 </head>
 <body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
       <div class="one-half column" style="margin-top: 25%">
@@ -50,13 +47,27 @@
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="userInputHours">
             <tr>
               <td>
-                13.08.2021
+                --.--.----
               </td>
               <td>
-                Wache
+                offset
+              </td>
+              <td>
+                <input type="time" placeholder="00:00am">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="date" onchange="datechange(this)">
+              </td>
+              <td>
+                <select>
+                  <option value="work">Work</option>
+                  <option value="free">Free</option>
+                </select>
               </td>
               <td>
                 8.5
@@ -80,8 +91,5 @@
       </div>
     </div>
   </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
